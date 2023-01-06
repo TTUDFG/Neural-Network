@@ -1,0 +1,39 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Fixing random state for reproducibility
+np.random.seed(19680801)
+
+
+N = 50
+x = Fh_noise_array
+y = Ffa_noise_array
+print('------------Fh_noise_array------------')
+print(Fh_noise_array)
+print('------------Ffa_noise_array------------')
+print(Ffa_noise_array)
+x.shape, y.shape
+# [0.001, 0.002, 0.003, 0.005, 0.01, 0.02, 0.03, 0.05, 0.1]
+std_plot = [[0.001 for _ in range(10)],
+       [0.002 for _ in range(10)],
+       [0.003 for _ in range(10)],
+       [0.005 for _ in range(10)],
+       [0.01 for _ in range(10)],
+       [0.02 for _ in range(10)],
+       [0.03 for _ in range(10)],
+       [0.05 for _ in range(10)],
+       [0.1 for _ in range(10)]]
+# plt.scatter(std_plot, y, c="blue", alpha=0.5, label="Ffa", loc="upper right")
+# plt.scatter(std_plot, x, c="green", alpha=0.5, label="Fh", loc="upper right")
+# plt.show()
+
+fig, ax = plt.subplots()
+
+ax.scatter(std_plot, x, c="green", label="Fh", alpha=0.3, edgecolors='none')
+ax.scatter(std_plot, y, c="blue", label="Ffa", alpha=0.3, edgecolors='none')
+plt.xlabel("stdev")
+plt.ylabel("Fh or Ffa values")
+ax.legend()
+ax.grid(True)
+
+plt.show()
